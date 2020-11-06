@@ -57,7 +57,7 @@ function setup(){
 //sword creation chha-chhing *anvil noises*
     sword=createSprite(300, 400, 20, 20)
     sword.addImage("knifey", swordIMG)
-    sword.scale=0.7
+    sword.scale=0.7;
   
 //fruit setup
     fruitGroup=createGroup();
@@ -97,6 +97,7 @@ if (monsterGroup.isTouching(sword)){
   fruitGroup.destroyEach();
   monsterGroup.destroyEach();
   GameOverSound.play();
+  
 }
 
 if  (gameState===END){
@@ -104,8 +105,10 @@ if  (gameState===END){
   if (keyDown("space")){
     gameState=PLAY    
     score=0;
+    }
+    text("You died! Hit space to restart",250,400);
+
   }
-}
 
   drawSprites();
 }
